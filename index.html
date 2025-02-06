@@ -12,58 +12,57 @@
         <a href="projects.html" class="nav-link">My Projects</a>
     </div>
 
-    <!-- About Me Section -->
     <section id="about-me" class="section">
         <div class="container">
             <h1>Hi, I'm Fellow-Banana</h1>
             <p class="intro-text">Welcome to my portfolio! I'm a new developer who just wants to have fun!</p>
             <p class="intro-text">On this website, you can explore some of the projects I’ve worked on and learn more about my skills and experience.</p>
 
-            <div class="left-content">
-                <div class="info">
-                    <div class="info-card">
-                        <h2>Skills and Technologies</h2>
-                        <p>I’m currently learning the following programming languages:</p>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Javascript</li>
-                            <li>Python</li>
-                        </ul>
-                    </div>
+            <div class="content-section">
+                <div class="left-content">
+                    <div class="info">
+                        <div class="info-card">
+                            <h2>Skills and Technologies</h2>
+                            <p>I’m currently learning the following programming languages:</p>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Javascript</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
 
-                    <div class="info-card">
-                        <h2>Personal Interests</h2>
-                        <p>Outside of coding, I enjoy staying active and taking part in sports such as pole vaulting and rock climbing.</p>
-                    </div>
+                        <div class="info-card">
+                            <h2>Personal Interests</h2>
+                            <p>Outside of coding, I enjoy staying active and taking part in sports such as pole vaulting and rock climbing.</p>
+                        </div>
 
-                    <div class="info-card">
-                        <h2>Education and Background</h2>
-                        <p>I'm a self-taught developer, constantly learning new skills and improving through personal projects and challenges.</p>
-                    </div>
+                        <div class="info-card">
+                            <h2>Education and Background</h2>
+                            <p>I'm a self-taught developer, constantly learning new skills and improving through personal projects and challenges.</p>
+                        </div>
 
-                    <div class="info-card">
-                        <h2>Career Aspirations</h2>
-                        <p>My goal is to major in engineering and apply the problem-solving skills I’ve learned through coding to real-world engineering challenges.</p>
+                        <div class="info-card">
+                            <h2>Career Aspirations</h2>
+                            <p>My goal is to major in engineering and apply the problem-solving skills I’ve learned through coding to real-world engineering challenges.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="right-content">
-                <h2>GitHub Profile</h2>
-                <!-- GitHub Profile Widget -->
-                <a href="https://github.com/Fellow-Banana" target="_blank">
-                    <img src="https://github.com/Fellow-Banana.png" alt="GitHub Profile" class="github-profile-img">
-                </a>
+                <div class="right-content">
+                    <h2>GitHub Profile</h2>
+                    <a href="https://github.com/Fellow-Banana" target="_blank">
+                        <img src="https://github.com/Fellow-Banana.png" alt="GitHub Profile" class="github-profile-img">
+                    </a>
 
-                <h2>GitHub Contributions</h2>
-                <div id="contributions"></div> <!-- Container to display the contributions -->
+                    <h2>GitHub Contributions</h2>
+                    <div id="contributions"></div> 
+                </div>
             </div>
         </div>
     </section>
 
     <script>
-        // GitHub API URL for your public activity
         const apiUrl = 'https://api.github.com/users/Fellow-Banana/events/public';
 
         fetch(apiUrl)
@@ -71,14 +70,9 @@
             .then(data => {
                 const contributionsElement = document.getElementById('contributions');
                 if (data.length > 0) {
-                    // Display number of recent activities
-                    contributionsElement.innerHTML = `
-                        <p>I have made ${data.length} public contributions in the last 30 days.</p>
-                    `;
+                    contributionsElement.innerHTML = `<p>I have made ${data.length} public contributions in the last 30 days.</p>`;
                 } else {
-                    contributionsElement.innerHTML = `
-                        <p>No public contributions found in the last 30 days.</p>
-                    `;
+                    contributionsElement.innerHTML = `<p>No public contributions found in the last 30 days.</p>`;
                 }
             })
             .catch(error => {
