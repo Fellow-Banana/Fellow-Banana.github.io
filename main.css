@@ -146,12 +146,16 @@ h2 {
 /* Unordered List with Indentation */
 ul {
     list-style-type: disc; /* Use bullet points */
-    margin-left: 20px;
+    margin-left: 0; /* Remove default left margin */
+    padding-left: 0; /* Remove default left padding */
     color: #999;
+    list-style-position: inside; /* Place bullets inside the list item */
 }
 
 li {
     margin-bottom: 8px;
+    padding-left: 20px; /* Add padding to the left for spacing */
+    text-indent: -20px; /* Move the text back to align with the bullet */
 }
 
 /* Responsive Design Adjustments */
